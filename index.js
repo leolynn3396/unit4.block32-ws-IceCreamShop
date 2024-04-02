@@ -72,7 +72,8 @@ app.put('/api/flavors/:id', async (req, res, next) => {
 const init = async () => {
     await client.connect();
     console.log('connected to database');
-    let SQL = `DROP TABLE IF EXISTS flavors;
+    let SQL = `
+    DROP TABLE IF EXISTS flavors;
     CREATE TABLE flavors(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
